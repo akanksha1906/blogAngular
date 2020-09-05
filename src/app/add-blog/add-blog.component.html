@@ -1,0 +1,19 @@
+<!-- Add user Button -->
+<app-blog-header></app-blog-header>
+<div class="row">
+  <div class= "col-md-6 offset-md-3 custom-container jumbotron" >
+    <h2> ADD BLOG </h2>
+    <label>User Name:
+      <input #name />
+    </label>
+    <br>
+    <label>Content:
+      <input #content />
+    </label><br>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button class="btn btn-success" (click)="add(name.value,content.value); name.value='';content.value=''">
+      ADD
+    </button>
+  </div>
+</div>
+

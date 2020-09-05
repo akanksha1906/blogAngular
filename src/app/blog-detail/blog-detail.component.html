@@ -1,0 +1,42 @@
+<app-blog-header></app-blog-header>
+<div class="row">
+    <div class= "col-md-6 offset-md-3 custom-container jumbotron" >
+    <div *ngIf="blogList">
+
+      <h2>{{blogList.name | uppercase}}'s BLOG</h2>
+      <div><span>id: </span>{{blogList.id}}</div>
+      
+      <div>
+        <label>name:
+          <input [(ngModel)]="blogList.name" placeholder="name"/>
+        </label><br>
+
+        <label>Content:
+          <input [(ngModel)]="blogList.content" placeholder="content" style="height:100px;font-size:14pt; "/>
+        </label>
+
+      </div>
+      <button (click)="save()">save</button> &nbsp; &nbsp; &nbsp; 
+      
+      <button 
+        (click)="likeRule()" 
+        [ngClass]="{'grey' : toggle, 'blue': !toggle}">
+        {{status}}
+      </button>
+      
+    </div>
+
+    <br><br>
+
+    <div>
+
+      <input id="str" [(ngModel)]="userComment" placeholder="Post a Comment"/>&nbsp; &nbsp; &nbsp;
+      <button (click)="comment()">Comment</button> &nbsp; &nbsp; &nbsp;
+      <br> Comments:--
+      <div *ngFor="let comment of str;let i = index">
+        User:{{i}} Commented:-  {{comment}}
+      </div>
+    </div>
+    
+  </div>
+</div>

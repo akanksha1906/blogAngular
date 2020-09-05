@@ -1,0 +1,28 @@
+table.blogs {
+    font-family: arial, sans-serif;
+    padding-top: 25px;
+    border-collapse: collapse;
+    width: 60%;
+    margin: 40px;
+}
+  
+td, th {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+margin: 40px;
+
+}
+
+tr:nth-child(even) {
+background-color: #dddddd;
+margin: 40px;
+}
+
+table.users {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+    margin: 40px;
+
+}

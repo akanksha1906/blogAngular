@@ -1,0 +1,61 @@
+.blogList .text {
+  position: relative;
+  top: -3px;
+}
+
+.blogList .badge {
+  display: inline-block;
+  font-size: large;
+  color: white;
+  margin: 20px;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: rgb(150, 0, 236);
+  line-height: 1em;
+  position: relative;
+}
+
+.blogList .badge3 {
+  display: inline-block;
+  font-size: large;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: rgba(143, 141, 142, 0.925);
+  line-height: 1em;
+  position: relative;
+}
+
+.blogList .badge2 {
+  display: inline-block;
+  color: #808080;
+  margin: 20px;
+  padding: 0.8em 0.7em 0 0.9em;
+  background-color: white;
+  line-height: 5em;
+}
+
+a {   
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  white-space: nowrap;
+  text-align:left;    
+  color:#66b3ff;
+  background-color:#ffccff;	
+}
+
+a:hover {
+  color:black;
+  background: white;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+button.delete {
+  position: relative;
+  left: 200px;
+  top: -32px;
+  background-color: gray !important;
+  color: white;
+} 

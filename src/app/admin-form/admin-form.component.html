@@ -1,0 +1,44 @@
+<h2>USERS</h2>
+
+<table class= "users">
+  <tr>
+    <th> USER ID </th>
+    <th>  Email </th>
+    <th> PASSWORD </th>
+  </tr>
+
+  <tr *ngFor="let users of userList">
+
+    <td> <div> {{users.id}} </div> </td>
+    <td> <div> {{users.email}} </div> </td>
+    <td> <div> {{users.password}} </div> </td>
+
+  </tr>
+</table><br>
+
+<h2>BLOGS</h2>
+    
+<table class = "blogs">
+
+  <tr>
+    <th> BLOG ID </th>
+    <th> BLOG WRITERS </th>
+    <th> BLOGS </th>
+    <th> EDIT BLOG </th>
+    <th> ACTION </th>
+  </tr>
+
+  <tr *ngFor="let blogs of blogList">
+   
+    <td> <div> {{blogs.id}} </div> </td>
+    <td> <div>{{blogs.name}} </div> </td>
+    <td> <div> {{blogs.content}} </div> </td>
+    <td> <a routerLink="/blog-detail/{{blogs.id}}"> Edit Blog </a> </td> 
+    <td> <button title="delete user" (click)="delete(blogs)">Delete Blog</button> </td>
+   
+  </tr>
+
+</table>
+
+
+

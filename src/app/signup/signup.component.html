@@ -1,0 +1,76 @@
+<app-blog-header></app-blog-header>
+
+<div class="row">
+  
+  <div class= "col-md-6 offset-md-3 custom-container jumbotron" >
+    <form class="form-horizontal" #signupForm = "ngForm">
+      
+      <fieldset>
+        
+        <legend> <b> <u> SIGNUP </u> </b> </legend> <br>
+        
+        <div class="form-group">
+          <label for="FirstName">First Name</label><br>
+          <input type="text" id="FirstName">
+        </div>
+            
+        <div class="form-group">
+          <label for="LastName">Last Name</label><br>
+          <input type="text" id="LastName">
+        </div>
+
+        <!--- Email Block --->
+        <div class="form-group">
+          <label for="inputEmail">Email</label><br>
+          <input type="text"
+            ngModel name="email"
+            #email = "ngModel" id="inputEmail"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          required>
+        </div>
+             
+        <!-- This is the error section -->
+        <div *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="alert alert-danger">
+          <div *ngIf = "email.errors?.required">
+            Email field can't be blank
+          </div>
+          <div *ngIf = "email.errors?.pattern && email.touched">
+            The email id doesn't seem right
+          </div>
+        </div>
+            
+        <!--- Password Block --->
+        <div class="form-group">
+          <label for="inputPassword">Password</label><br>
+          <input type="password"
+            ngModel name="password" #password = "ngModel"
+            id="inputPassword"
+          minlength ="8" required>
+        </div>
+            
+        <!--- Select gender Block --->
+        <div class="form-group">
+          <label for="select">Gender</label><br>
+          <select id="select">     
+            <option *ngFor = "let g of gender"
+              [value] = "g"> {{g}} 
+            </option>
+          </select>
+        </div>
+
+        <!--- Buttons Block --->
+        <div class="form-group">
+          <button type="reset" class="btn btn-default">Cancel</button>&nbsp; &nbsp;
+          <button type="submit" class="btn btn-success" 
+            (click)="register(email.value, password.value); email.value='';password.value=''"> 
+            Submit
+          </button> 
+          <br><br><button class="btn btn-primary " routerLink = '/login'>Back to Login</button>  
+        </div>
+      </fieldset>
+    </form>
+    
+    {{user | json}}
+  </div>
+</div>

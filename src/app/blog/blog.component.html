@@ -1,0 +1,31 @@
+<app-blog-header (messageToEmit)="getMessage($event)"></app-blog-header>
+<h2>BLOGS</h2>
+
+<table class = "blogList" width="1200">
+
+  <tr>
+    <th class =badge> BLOG ID </th>
+    <th>| BLOG WRITERS |</th>
+    <th>| BLOG LIST |</th>
+    <th align="centre">| EDIT BLOG |</th>
+    <th>| ACTION |</th>
+  </tr>
+
+  <tr *ngFor="let blogs of blogList">
+   
+    <td> <div class =badge> {{blogs.id}} </div> </td>
+    <td> <div class = badge2>{{blogs.name}} </div> </td>
+    <td> <div class = badge3> {{blogs.content}} </div> </td>
+    <td> <a routerLink="/blog-detail/{{blogs.id}}"> Read/Edit Blog </a> </td> 
+    <td> <button title="delete user" (click)="delete(blogs)">Delete Blog</button> </td>
+   
+  </tr>
+
+</table>
+
+      
+      
+      
+    
+  
+  
